@@ -1,24 +1,39 @@
-# README
+# DocuFilm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+自分が観た映画を記録したり、他人の記録を閲覧することができるレビューサイト
 
-Things you may want to cover:
+### テーマを選んだ理由
+　自分が過去どんな映画を観たか、どんな映画だったかを記録していたことがあったが、上手に言語化できないこと、
+ノートに記録していたためにそのノートがない場面では記録できなかったことが原因で長続きしなかった。そこで、
+ネット上で手軽に記録できて、かつどんな映画だったかをもっと簡単に記録できるようなアプリがあればいいと思い、
+このようなテーマにした。映画館だけでなく、豊富な配信サイトから多種多様な映画を自由に見ることができる現代だから
+こそ、何に感動したのか、どんな発見をしたのかという感動体験が埋もれがちになってしまうと考えた。そこで過去に
+自分がどんな映画で何を感じたのかを、誰でも使えるような媒体があれば、それぞれの趣味の時間をより豊かにする
+ことができるのではないかと考えた。
 
-* Ruby version
+### ターゲットユーザ
+・映画鑑賞が趣味の人<br>
+・観た映画を記録したい人<br>
+・観る映画がどんな作品なのかを知りたい人<br>
+・次に観る映画を探したい人<br>
 
-* System dependencies
+### 主な利用シーン
+・映画の鑑賞後<br>
+・次に何の映画を鑑賞するかを探す時<br>
+・観たい映画がどんな作品なのか知りたい時<br>
 
-* Configuration
+## 実装機能リストURL
+https://docs.google.com/spreadsheets/d/15iSsRyb-P71gQTg_tix5GT1N0UypoHnmEf7eoVNYoes/edit?usp=sharing
 
-* Database creation
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- Font Awesome
+※本アプリでは、映画作品の画像は使用致しません。
