@@ -1,0 +1,17 @@
+<div class="container px-5 px-sm-0">
+ <div class="row m-3">
+   <div class="col-8 m-3">
+    <% @users. each do |user| %>
+     <article class="post-preview">
+       <h2 class="post-taitle">
+        <%= link_to user.user_name, admin_user_path(user.id), class:'text-dark' %>
+       </h2>
+       <h4 class="post-introduction text-dark">
+        <%= user.introduction %>
+       </h4>
+     <hr>
+     </article>
+    <% end %>
+   </div>
+ </div>
+</div>

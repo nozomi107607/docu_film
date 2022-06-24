@@ -1,0 +1,42 @@
+<div class="container px-5 px-sm-0">
+ <div class="row m-3">
+  <div class="col-3 md-3">
+    <h2>User Info</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th><%= @user.user_name %></th>
+            </tr>
+          　<tr>
+              <th >introdaction</th>
+              <th><%= @user.introduction %></th>
+            </tr>
+          </thead>
+        </table>
+  </div>
+  <div class="col-8 m-3">
+   <% @user.films. each do |film| %>
+   <article class="post-preview">
+          <h2 class="post-taitle">
+            <%= link_to film.introduction, admin_film_path(film.id), class:'text-dark' %>
+          </h2>
+          <h4 class="post-introduction"><%= link_to film.film_title, admin_film_path(film.id), class:'text-dark' %></h4>
+          <div id="star-rate<%= film.id %>">Excellent!!!</div>
+          <script>
+            $('#star-rate<%= film.id%>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              half      : false,
+              readOnly: true,
+              score: <%= film.evaluation %>,
+            });
+          </script>
+          <%= link_to "read more", admin_film_path(film.id), class:'text-secondary' %>
+          <hr>
+     </article>
+    <% end %>
+  </div>
+ </div>
+</div>
