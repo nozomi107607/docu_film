@@ -1,0 +1,30 @@
+<ul class="nav flex-column d-flex align-items-center">
+      <h2>User Info</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th><%= user.user_name %></th>
+            </tr>
+          　<tr>
+              <th >introdaction</th>
+              <th><%= user.introduction %></th>
+            </tr>
+          </thead>
+        　<%= link_to(edit_public_user_path(user.id), class:'btn btn-outline-secondary btn-sm btn-block') do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+        </table>
+          <li class="nav-item">
+          <%= link_to "マイページ", public_user_path(current_user.id), class: 'nav-link text-dark' %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "記録する", new_public_film_path, class: 'nav-link text-dark' %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "みんなの記録", public_films_path, class: 'nav-link text-dark' %>
+          </li>
+          <li class="nav-item">
+
+          </li>
+  </ul>

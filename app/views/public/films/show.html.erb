@@ -1,0 +1,35 @@
+<div class="container m-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+      <h3 class="pb-3 mb-4 font-italic border-bottom"><%= @film.introduction %></h3>
+      <div>
+        <h2><%= @film.film_title %></h2>
+        <p><%= @film.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+      </div>
+      <div>
+        <p><%= @film.body %></p>
+      </div>
+      <div>
+        <div id="star-rate<%= @film.id %>">Excellent!!!</div>
+        <script>
+          $('#star-rate<%= @film.id%>').raty({
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            half      : false,
+            readOnly: true,
+            score: <%= @film.evaluation %>,
+          });
+        </script>
+      </div>
+      <div>
+        <% if @film.user_id == current_user.id %>
+          <%= link_to "編集する", edit_public_film_path(@film.id), class:"text-secondary font-weight-bold" %> /
+          <%= link_to "消去する", public_film_path(@film), method: :delete, class:"text-secondary font-weight-bold" %> /
+          <%= link_to "戻る", public_user_path(current_user.id), class:"text-secondary font-weight-bold" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

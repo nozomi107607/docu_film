@@ -1,0 +1,41 @@
+<div class="container px-5 px-sm-0">
+ <div class="row m-3">
+   <div class="col-3 md-3">
+     <%= render 'list', user: @user , user: current_user %>
+   </div>
+    <div class="col-8 m-3">
+     <h3 class="border-bottom">New Film</h3>
+      <%= form_with model: @film, url: public_films_path(@film.id),method: :post do |f| %>
+        <div class="form-group">
+          <label>映画のタイトル</label><br>
+          <%= f.text_field :film_title, class:"form-control film_title" %>
+        </div>
+        <div class="form-group">
+          <label>ひとこと紹介</label><br>
+          <%= f.text_field :introduction, class:"form-control introduction" %>
+        </div>
+        <div class="form-group">
+          <label>レビュー本文</label><br>
+          <%= f.text_area :body, class:"form-control body",size: "20x10" %>
+        </div>
+        <div class="form-group row" id="star">
+          <label>面白かったら★</label>
+        　<%= f.hidden_field :evaluation, id: :evaluation %>
+        </div>
+        <script>
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+
+            scoreName: 'film[evaluation]',
+            half: false,
+          });
+        </script>
+        <div class="form-group">
+          <%= f.submit 'Entry', class:'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
