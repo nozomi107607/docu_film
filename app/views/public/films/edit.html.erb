@@ -1,9 +1,9 @@
 <div class="container px-5 px-sm-0">
-  <div class="row d-flex justify-content-center">
+  <div class="row m-3">
    <div class="col-3 md-3">
      <%= render 'list', user: @user , user: current_user %>
    </div>
-    <div class="col-8">
+    <div class="col-8 m-3">
      <h3 class="border-bottom">Edit Film</h3>
       <%= form_with model: @film, url: public_film_path(@film.id),method: :patch do |f| %>
         <div class="form-group">
