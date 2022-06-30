@@ -4,8 +4,8 @@
     <%= render 'list', user: @user , user: current_user %>
    </div>
    <div class="col-8 m-3">
-   <% @films.each do |film| %>
     <article class="post-preview">
+    <% @films.each do |film| %>
      <h2 class="post-taitle">
       <%= link_to film.introduction, public_film_path(film.id), class:'text-dark' %>
      </h2>
@@ -25,8 +25,8 @@
      </script>
      <%= link_to "read more", public_film_path(film.id), class:'text-secondary' %>
      <hr>
+    <% end %>
     </article>
-  <% end %>
    </div>
  </div>
 </div>
