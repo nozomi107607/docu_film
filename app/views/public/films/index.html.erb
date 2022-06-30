@@ -4,7 +4,7 @@
     <%= render 'list', user: @user , user: current_user %>
    </div>
    <div class="col-8 m-3">
-    <%= @films. each do |film| %>
+    <% @films. each do |film| %>
    　<article class="post-preview">
           <h2 class="post-taitle">
             <%= link_to film.introduction, public_film_path(film.id), class:'text-dark' %>
