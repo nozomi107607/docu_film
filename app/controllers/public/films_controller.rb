@@ -12,7 +12,7 @@ class Public::FilmsController < ApplicationController
   end
 
   def index
-    @films = Film.order("RAND()").limit(10)
+    @films = Film.all
     @user = User.find(current_user.id)
   end
 
