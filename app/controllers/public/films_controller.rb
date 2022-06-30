@@ -12,8 +12,7 @@ class Public::FilmsController < ApplicationController
   end
 
   def index
-    rand = Rails.env.production? ? "RANDOM()" : "rand()"
-    @films = Films.all.order(rand).limit(10)
+    @film = Film.order("RAND()").limit(10)
     @user = User.find(current_user.id)
   end
 
