@@ -5,7 +5,7 @@
    </div>
    <div class="col-8 m-3">
     <article class="post-preview">
-    <% @films.each do |film| %>
+    <% @films. each do |film| %>
      <h2 class="post-taitle">
       <%= link_to film.introduction, public_film_path(film.id), class:'text-dark' %>
      </h2>
